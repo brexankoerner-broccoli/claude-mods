@@ -1,0 +1,5 @@
+{
+  "name": "usage-bars",
+  "description": "Compact usage band above the prompt: 5-hour and 7-day bars with reset clocks, plus context and token chips.",
+  "license": "MIT"
+}

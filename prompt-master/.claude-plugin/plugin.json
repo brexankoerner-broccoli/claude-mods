@@ -1,0 +1,5 @@
+{
+  "name": "prompt-master",
+  "description": "One-click button that rewrites your rough draft into a clearer, stronger prompt before you send it.",
+  "types": "./types/index.d.ts"
+}

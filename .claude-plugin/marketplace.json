@@ -1,0 +1,19 @@
+{
+  "name": "brexan-mods",
+  "owner": {
+    "name": "Brexan Koerner"
+  },
+  "description": "Claude desktop mods: a usage and context tracker, and a one-click prompt rewriter.",
+  "plugins": [
+    {
+      "name": "usage-bars",
+      "source": "./usage-bars",
+      "description": "Compact usage band above the prompt: Pac-Man bars for the 5-hour and 7-day windows, plus context."
+    },
+    {
+      "name": "prompt-master",
+      "source": "./prompt-master",
+      "description": "One-click button above the prompt box that rewrites your rough draft into a clearer, stronger prompt before you send it."
+    }
+  ]
+}
