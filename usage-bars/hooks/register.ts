@@ -13,6 +13,8 @@ const WINDOWS: Record<string, string> = { five_hour: '5h', seven_day: '7d' }
 const CHIP_COLOR = '#cbd5ed'
 const PAC_COLOR = '#f2c230'
 const GHOST_COLOR = '#e0625a'
+// Dots Pac-Man has eaten: green, since using more of the plan is a good thing
+const EATEN_COLOR = '#2fb36b'
 
 // Row geometry, in CSS pixels
 const ROW = 14
@@ -85,13 +87,13 @@ function track(x: number, label: string, percent: number, clock: string, trackW:
   const shown = Math.max(0, Math.min(100, percent))
   const start = x + LABEL_W
   const pacX = start + PAC_R + ((trackW - 2 * PAC_R) * shown) / 100
-  // Grey dots ahead of Pac-Man; the ones he has eaten stay as red dots
+  // Grey dots ahead of Pac-Man; the ones he has eaten stay as green dots
   // behind him, so his place on the track reads at a glance
   const dots: string[] = []
   for (let dx = start + DOT_GAP / 2; dx < start + trackW; dx += DOT_GAP) {
     const cx = dx.toFixed(1)
     if (dx > pacX + PAC_R) dots.push(`<circle class="dot" cx="${cx}" cy="${MID}" r="1.2"/>`)
-    else if (dx < pacX - PAC_R) dots.push(`<circle class="eaten" cx="${cx}" cy="${MID}" r="1.2" fill="${GHOST_COLOR}"/>`)
+    else if (dx < pacX - PAC_R) dots.push(`<circle class="eaten" cx="${cx}" cy="${MID}" r="1.2" fill="${EATEN_COLOR}"/>`)
   }
   // Past 80% a ghost chases Pac-Man, a step behind him
   const chaser = shown >= 80 ? ghost(Math.max(start + 4.5, pacX - PAC_R - 8)) : ''
