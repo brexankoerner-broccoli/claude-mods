@@ -9,22 +9,12 @@ Mods for the Claude desktop app (Code tab). No company-specific information.
 
 ## Install
 
-This repo is private, so ask Brexan to add you as a collaborator first.
+No GitHub account or invite needed.
 
-**1. Let Claude Code reach GitHub as you** (one time). In Terminal:
-
-```bash
-gh auth login
-```
+**1. Add this repo and install the mods.** In Terminal:
 
 ```bash
-gh auth setup-git
-```
-
-**2. Add this repo and install the mods.** Replace `<owner>` with the account you were given access to (`brexankoerner-broccoli` or `Aspodacious`):
-
-```bash
-claude plugin marketplace add <owner>/claude-mods
+claude plugin marketplace add Aspodacious/claude-mods
 ```
 
 ```bash
@@ -35,9 +25,11 @@ claude plugin install usage-bars@brexan-mods
 claude plugin install prompt-master@brexan-mods
 ```
 
-Or, in a Claude Code session, just ask: *"Add the plugin marketplace <owner>/claude-mods and install usage-bars and prompt-master from it."*
+Or, in a Claude Code session, just ask: *"Add the plugin marketplace Aspodacious/claude-mods and install usage-bars and prompt-master from it."*
 
-**3. Start a new session.** The usage band and the Prompt Master button appear above the prompt box.
+**2. Start a new session.** The usage band and the Prompt Master button appear above the prompt box.
+
+If you installed from a zip Brexan sent you, remove that copy first: `claude plugin marketplace remove brexan-mods`.
 
 ## Getting updates automatically
 
@@ -46,7 +38,7 @@ Auto-update is **off** by default for marketplaces outside Anthropic. Turn it on
 - Run `/plugin`, open the **Marketplaces** tab, pick **brexan-mods**, and turn on auto-update, **or**
 - ask Claude in a session: *"Turn on auto-update for the brexan-mods plugin marketplace."*
 
-Claude Code then checks for changes about 10 minutes into a session, and new versions load in your next session. Step 1 above (`gh auth setup-git`) is what lets those background checks reach this private repo.
+Claude Code then checks for changes about 10 minutes into a session, and new versions load in your next session.
 
 To update by hand instead:
 
