@@ -14,7 +14,7 @@ No GitHub account or invite needed.
 **1. Add this repo and install the mods.** In Terminal:
 
 ```bash
-claude plugin marketplace add Aspodacious/claude-mods
+claude plugin marketplace add brexankoerner-broccoli/claude-mods
 ```
 
 ```bash
@@ -25,7 +25,7 @@ claude plugin install usage-bars@brexan-mods
 claude plugin install prompt-master@brexan-mods
 ```
 
-Or, in a Claude Code session, just ask: *"Add the plugin marketplace Aspodacious/claude-mods and install usage-bars and prompt-master from it."*
+Or, in a Claude Code session, just ask: *"Add the plugin marketplace brexankoerner-broccoli/claude-mods and install usage-bars and prompt-master from it."*
 
 **2. Start a new session.** The usage band and the Prompt Master button appear above the prompt box.
 
