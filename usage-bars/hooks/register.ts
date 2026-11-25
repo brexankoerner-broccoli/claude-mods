@@ -19,7 +19,8 @@ const ROW = 14
 const MID = ROW / 2
 const PAC_R = 4.5
 const DOT_GAP = 8
-const LABEL_W = 34
+// Wide enough for "5h 100%", so the track starts clear of its label
+const LABEL_W = 54
 const CLOCK_W = 50
 const WINDOW_GAP = 14
 
@@ -84,9 +85,13 @@ function track(x: number, label: string, percent: number, clock: string, trackW:
   const shown = Math.max(0, Math.min(100, percent))
   const start = x + LABEL_W
   const pacX = start + PAC_R + ((trackW - 2 * PAC_R) * shown) / 100
+  // Grey dots ahead of Pac-Man; the ones he has eaten stay as red dots
+  // behind him, so his place on the track reads at a glance
   const dots: string[] = []
   for (let dx = start + DOT_GAP / 2; dx < start + trackW; dx += DOT_GAP) {
-    if (dx > pacX + PAC_R) dots.push(`<circle class="dot" cx="${dx.toFixed(1)}" cy="${MID}" r="1.2"/>`)
+    const cx = dx.toFixed(1)
+    if (dx > pacX + PAC_R) dots.push(`<circle class="dot" cx="${cx}" cy="${MID}" r="1.2"/>`)
+    else if (dx < pacX - PAC_R) dots.push(`<circle class="eaten" cx="${cx}" cy="${MID}" r="1.2" fill="${GHOST_COLOR}"/>`)
   }
   // Past 80% a ghost chases Pac-Man, a step behind him
   const chaser = shown >= 80 ? ghost(Math.max(start + 4.5, pacX - PAC_R - 8)) : ''
